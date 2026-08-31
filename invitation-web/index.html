@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Security Headers & Anti-Clickjacking Directives -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>BLUEVITE - Luxury Digital Wedding Suite (#2F3B90 Ultramarine Edition)</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Platform pembuatan undangan digital website premium bernuansa Ultramarine Blue (#2F3B90) & Pure White untuk pernikahan mewah dengan Live RSVP, Musik Custom, dan Navigasi Google Maps.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232f3b90'/><text y='70' x='50' text-anchor='middle' font-family='serif' font-weight='bold' font-size='60' fill='%23ffffff'>B</text></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ultramarine: '#2f3b90',
+              ultramarineDark: '#1e2666',
+              ultramarineDeep: '#161d52',
+              ultramarineLight: '#4351b8',
+              gold: '#f59e0b',
+              champagne: '#fef3c7'
+            }
+          },
+          fontFamily: {
+            display: ['Syne', 'Bebas Neue', 'sans-serif'],
+            serifLuxury: ['Cormorant Garamond', 'Playfair Display', 'serif'],
+            script: ['Playfair Display', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Theme Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#2f3b90] text-white selection:bg-white selection:text-[#2f3b90]">
+
+  <!-- TOP TICKER ANNOUNCEMENT BAR (PUBLIC ONLY) -->
+  <div class="bg-[#161d52] text-white text-xs font-mono py-2.5 px-4 border-b border-white/20 overflow-hidden flex items-center justify-between">
+    <div class="flex items-center gap-6 font-bold">
+      <span class="flex items-center gap-1.5"><span class="sparkle-icon text-amber-300">✦</span> THE LUXURY WEDDING STATIONERY SUITE</span>
+      <span class="hidden md:inline">• BEBAS REVISI SEPUASNYA</span>
+      <span class="hidden lg:inline">• MASA AKTIF 1 TAHUN PENUH</span>
+    </div>
+    <div class="flex items-center gap-4 text-[11px] font-bold">
+      <span class="text-white/80">ID / IDR</span>
+      <a href="https://wa.me/6282223551205?text=Halo%20Admin%20Bluevite,%20saya%20ingin%20konsultasi%20undangan%20digital" target="_blank" class="hover:text-amber-300 transition flex items-center gap-1">
+        <i data-lucide="phone" class="w-3 h-3"></i> +62 822-2355-1205
+      </a>
+    </div>
+  </div>
+
+  <!-- NAVIGATION BAR (PUBLIC ONLY) -->
+  <header class="sticky top-0 z-40 bg-[#2f3b90]/95 backdrop-blur-md border-b-2 border-white/20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 bg-white text-[#2f3b90] rounded-xl flex items-center justify-center shadow-[3px_3px_0px_#161d52] group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition font-serifLuxury text-2xl font-bold border-2 border-white">
+          ✦
+        </div>
+        <div>
+          <span class="font-display text-2xl tracking-wider text-white flex items-center gap-1 font-bold">
+            BLUEVITE<span class="text-amber-300">.ID</span>
+          </span>
+          <span class="text-[9px] font-mono tracking-widest text-blue-200 uppercase block -mt-1 font-bold">
+            Luxury Wedding Suite
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 font-mono text-xs font-bold tracking-wide">
+        <a href="#about" class="text-white hover:text-amber-300 transition">TENTANG</a>
+        <a href="#catalog" class="text-white hover:text-amber-300 transition">KATALOG TEMA</a>
+        <a href="#features" class="text-white hover:text-amber-300 transition">FITUR UNGGULAN</a>
+        <a href="#pricing" class="text-white hover:text-amber-300 transition">PAKET HARGA</a>
+        <a href="#faq" class="text-white hover:text-amber-300 transition">FAQ</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/6282223551205?text=Halo%20Admin%20Bluevite,%20saya%20ingin%20konsultasi%20undangan" target="_blank" class="btn-pop-white py-2.5 px-5 rounded-xl text-xs uppercase font-display tracking-wider">
+          <i data-lucide="message-circle" class="w-4 h-4 text-[#2f3b90]"></i>
+          <span>Konsultasi WA</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION (Theme: Ultramarine #2F3B90 & Pure White Editorial)
+       ========================================================================== -->
+  <section class="relative pt-14 pb-20 overflow-hidden bg-gradient-to-b from-[#2f3b90] via-[#242f78] to-[#161d52]">
+    
+    <!-- Sparkles Floating Background -->
+    <div class="absolute inset-0 halftone-ultramarine opacity-30 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Top Badges / Floating Elements -->
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/40 px-4 py-1.5 rounded-full text-xs font-mono font-bold text-white">
+          <span class="sparkle-icon text-amber-300">✦</span>
+          <span>THE NEW STANDARD OF CONTEMPORARY WEDDING INVITATIONS</span>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono text-white/90">⭐️ 4.9/5 dari 4.800+ Pasangan Bahagia</span>
+        </div>
+      </div>
+
+      <!-- Main Hero Headline & 3D Visual Centerpiece -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left Headline Column (7 cols) -->
+        <div class="lg:col-span-7 text-left space-y-6">
+          
+          <h1 class="font-serifLuxury text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tight drop-shadow-xl">
+            EXQUISITE <br>
+            <span class="font-display font-black text-white">DIGITAL WEDDING</span> <br>
+            <span class="inline-block bg-white text-[#2f3b90] px-5 py-1 mt-2 rounded-2xl border-2 border-white shadow-[6px_6px_0px_#161d52] -rotate-1 font-serifLuxury italic font-normal">
+              STATIONERY SUITE.
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-blue-100 max-w-xl font-normal leading-relaxed font-sans">
+            Wujudkan momen sakral terindah Anda dengan undangan digital berbasis website bernuansa <b>Ultramarine Royal Blue (`#2F3B90`) &amp; Pure White</b> yang memukau para tamu undangan.
+          </p>
+
+          <!-- Hero Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#catalog" class="btn-pop-white py-3.5 px-7 rounded-2xl text-sm font-display uppercase tracking-wider shadow-[5px_5px_0px_#161d52]">
+              <i data-lucide="book-open" class="w-5 h-5"></i>
+              <span>Jelajahi Katalog Tema</span>
+            </a>
+            <button onclick="window.simulator.open('royal-ultramarine-01')" class="btn-pop-dark py-3.5 px-6 rounded-2xl text-sm font-display uppercase tracking-wider shadow-[5px_5px_0px_#ffffff]">
+              <i data-lucide="smartphone" class="w-5 h-5 text-amber-300"></i>
+              <span>Coba Demo Interaktif</span>
+            </button>
+          </div>
+
+          <!-- Quick Stats Pill Counters -->
+          <div class="pt-6 border-t border-white/20 grid grid-cols-3 gap-4 max-w-lg">
+            <div>
+              <span class="stats-counter-num font-display font-black text-3xl text-white block" data-target="4890">0</span>
+              <span class="text-[11px] font-mono text-blue-200">Undangan Dibuat</span>
+            </div>
+            <div>
+              <span class="stats-counter-num font-display font-black text-3xl text-white block" data-target="325000">0</span>
+              <span class="text-[11px] font-mono text-blue-200">Tamu Tersebar</span>
+            </div>
+            <div>
+              <span class="stats-counter-num font-display font-black text-3xl text-white block" data-target="98400">0</span>
+              <span class="text-[11px] font-mono text-blue-200">Doa Restu Masuk</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Column (5 cols - Showcase Card with Sparkles) -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          
+          <!-- Floating Die-Cut Badge -->
+          <div class="diecut-badge absolute -top-4 -right-2 px-4 py-2.5 rounded-2xl z-20 font-display text-xs uppercase cursor-pointer hover:scale-105 transition" onclick="document.getElementById('pricing').scrollIntoView()">
+            <div class="flex items-center gap-1.5 font-bold">
+              <span class="sparkle-icon text-amber-500">✦</span>
+              <span>ROYAL SUITE</span>
+            </div>
+          </div>
+
+          <!-- Floating Sticker ("Bebas Revisi") -->
+          <div class="absolute -bottom-4 -left-4 z-20 bg-white text-[#2f3b90] border-2 border-white px-4 py-2 rounded-xl font-display text-xs uppercase shadow-[4px_4px_0px_#161d52] rotate-[-6deg] font-bold">
+            ✨ Unlimited Revisions
+          </div>
+
+          <!-- Hero Main Showcase Card (Ultramarine Luxury Gradient) -->
+          <div class="pop-card-ultramarine rounded-3xl p-6 w-full max-w-md relative overflow-hidden bg-gradient-to-b from-[#2f3b90] to-[#161d52]">
+            <div class="relative rounded-2xl overflow-hidden border-2 border-white shadow-2xl bg-slate-950">
+              <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Preview Undangan Digital" class="w-full h-84 object-cover">
+              
+              <!-- Card Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-5 text-left">
+                <span class="inline-block bg-white text-[#2f3b90] text-[10px] font-display font-bold px-2.5 py-0.5 rounded uppercase w-max mb-1">
+                  ✦ THE ROYAL SUITE
+                </span>
+                <h3 class="font-serifLuxury text-3xl text-white font-bold tracking-wide">dr. Aisyah &amp; Rayhan</h3>
+                <p class="text-xs text-slate-300 font-mono">Minggu, 20 November 2026</p>
+
+                <div class="mt-4 flex items-center justify-between gap-2 pt-3 border-t border-white/20">
+                  <div class="flex items-center gap-1.5 text-xs text-amber-300 font-bold font-mono">
+                    <i data-lucide="music" class="w-3.5 h-3.5"></i>
+                    <span>Audio &amp; RSVP Aktif</span>
+                  </div>
+                  <button onclick="window.simulator.open('royal-ultramarine-01')" class="btn-pop-white py-1.5 px-3.5 rounded-lg text-xs font-bold uppercase">
+                    Buka Demo
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       BRAND STORY & MANIFESTO SECTION (#161D52 Midnight Navy Background)
+       ========================================================================== -->
+  <section id="about" class="py-20 bg-[#161d52] text-center relative border-y-2 border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+      
+      <span class="font-serifLuxury italic text-2xl sm:text-3xl text-amber-300 block mb-2 font-normal">
+        ✦ Bluevite Luxury Wedding Atelier
+      </span>
+
+      <h2 class="font-serifLuxury text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight font-bold uppercase tracking-wide mb-6">
+        WAS CREATED TO BRING MODERN EDITORIAL SOPHISTICATION, HEARTFELT ROMANCE, AND TIMELESS ELEGANCE TO YOUR WEDDING INVITATIONS.
+      </h2>
+
+      <p class="text-sm sm:text-base text-blue-100 leading-relaxed max-w-2xl mx-auto mb-8 font-sans">
+        Setiap desain dirancang secara presisi dengan warna Ultramarine Blue `#2F3B90`, animasi mulus, dan kemudahan RSVP bagi seluruh tamu undangan Anda.
+      </p>
+
+      <a href="#catalog" class="btn-pop-white py-3 px-8 rounded-full text-xs font-display uppercase tracking-widest shadow-[4px_4px_0px_#161d52] inline-flex items-center gap-2">
+        <span>JELAJAHI KOLEKSI KAMI</span>
+        <i data-lucide="arrow-right" class="w-4 h-4 text-[#2f3b90]"></i>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       3 SHOWCASE POSTER CARDS (Menu Card & Die-Cut Badges)
+       ========================================================================== -->
+  <section class="py-20 bg-[#2f3b90] border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="inline-block px-3 py-1 bg-white text-[#2f3b90] font-display text-xs uppercase rounded-md font-bold mb-2 shadow">
+          ✦ EXCITING HIGHLIGHTS
+        </span>
+        <h2 class="font-serifLuxury text-4xl sm:text-5xl text-white uppercase tracking-tight font-bold">
+          KENAPA MEMILIH BLUEVITE ROYAL SUITE?
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- CARD 1: READY-TO-USE THEMES -->
+        <div class="pop-card-ultramarine rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden bg-gradient-to-b from-[#2f3b90] to-[#161d52]">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-serifLuxury italic text-amber-300 text-lg">Ready-to-Use</span>
+              <span class="text-[10px] font-mono bg-white text-[#2f3b90] px-2.5 py-0.5 rounded font-bold">50+ TEMA</span>
+            </div>
+            <h3 class="font-serifLuxury text-4xl text-white leading-none mb-4 font-bold">
+              INSTANT THEMES DELIVERED
+            </h3>
+            <p class="text-xs text-blue-100 leading-relaxed mb-6 font-sans">
+              Pilihan tema lengkap dari Wedding Syar'i, Modern Botanical, Rustic Vintage, hingga Sweet 17 siap pakai dalam hitungan jam.
+            </p>
+          </div>
+
+          <div class="relative rounded-2xl overflow-hidden border-2 border-white shadow-lg bg-slate-950 mb-4">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Instant Themes" class="w-full h-48 object-cover">
+          </div>
+
+          <div class="text-center text-xs font-mono text-blue-200">
+            ✦ Fast &amp; Flawless Execution
+          </div>
+        </div>
+
+        <!-- CARD 2: VIRAL & TRENDING AESTHETICS -->
+        <div class="pop-card-ultramarine rounded-3xl p-6 flex flex-col justify-between relative overflow-hidden bg-[#1e2666] halftone-ultramarine">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="font-serifLuxury italic text-amber-300 text-lg">Romantic &amp; Chic</span>
+              <span class="text-[10px] font-mono bg-white text-[#2f3b90] px-2 py-0.5 rounded font-bold uppercase">TRENDING</span>
+            </div>
+            <h3 class="font-serifLuxury text-4xl text-white leading-none mb-4 font-bold">
+              INTERACTIVE AUDIO &amp; RSVP
+            </h3>
+            <p class="text-xs text-blue-100 leading-relaxed mb-6 font-sans">
+              Dilengkapi pemutar musik dengan visualizer equalizer, formulir konfirmasi kehadiran, countdown timer hari H, dan navigasi peta.
+            </p>
+          </div>
+
+          <div class="bg-[#161d52] border-2 border-white rounded-2xl p-5 text-center my-auto shadow-lg">
+            <div class="flex items-center justify-center gap-1 h-8 mb-2">
+              <span class="equalizer-bar"></span>
+              <span class="equalizer-bar"></span>
+              <span class="equalizer-bar"></span>
+              <span class="equalizer-bar"></span>
+              <span class="equalizer-bar"></span>
+            </div>
+            <span class="text-xs font-mono font-bold text-amber-300 uppercase">Seamless Wedding Experience</span>
+          </div>
+
+          <button onclick="window.simulator.open('botanical-luxury-03')" class="btn-pop-white w-full py-2.5 rounded-xl text-xs font-bold uppercase mt-4">
+            Lihat Contoh Live
+          </button>
+        </div>
+
+        <!-- CARD 3: ORDER RECEIPT TICKET (Menu Clip Style) -->
+        <div class="pop-card rounded-3xl p-6 flex flex-col justify-between relative bg-white text-slate-900 menu-card-clip">
+          
+          <div class="pt-2">
+            <div class="flex justify-between items-center border-b-2 border-dashed border-slate-300 pb-3 mb-3">
+              <div>
+                <span class="font-serifLuxury text-xl text-[#161d52] font-bold">INVOICE PREVIEW</span>
+                <span class="text-[10px] font-mono text-slate-500 block">BLUEVITE ROYAL SUITE</span>
+              </div>
+              <span class="text-[10px] bg-blue-100 text-[#2f3b90] font-bold px-2 py-1 rounded font-mono">ALL-INCLUSIVE</span>
+            </div>
+
+            <div class="space-y-2 text-xs font-mono text-slate-700 mb-4 text-left">
+              <div class="flex justify-between">
+                <span>1x Premium Digital Web</span>
+                <span>Rp 129.000</span>
+              </div>
+              <div class="flex justify-between">
+                <span>1x Live RSVP &amp; Ucapan</span>
+                <span class="text-emerald-600 font-bold">GRATIS</span>
+              </div>
+              <div class="flex justify-between">
+                <span>1x Unlimited Sebar WA</span>
+                <span class="text-emerald-600 font-bold">GRATIS</span>
+              </div>
+            </div>
+
+            <div class="border-t-2 border-[#161d52] pt-3 flex justify-between items-baseline mb-4">
+              <span class="font-bold text-xs uppercase font-mono">TOTAL ESTIMASI:</span>
+              <span class="font-display text-3xl text-[#2f3b90] font-bold">Rp 129.000</span>
+            </div>
+
+            <!-- Barcode strip -->
+            <div class="barcode-strip w-full justify-center border border-slate-300 rounded mb-4">
+              <span style="width: 3px;"></span><span style="width: 1px;"></span><span style="width: 4px;"></span>
+              <span style="width: 2px;"></span><span style="width: 5px;"></span><span style="width: 2px;"></span>
+              <span style="width: 1px;"></span><span style="width: 4px;"></span><span style="width: 2px;"></span>
+              <span style="width: 3px;"></span><span style="width: 1px;"></span><span style="width: 5px;"></span>
+              <span style="width: 2px;"></span><span style="width: 3px;"></span><span style="width: 1px;"></span>
+            </div>
+          </div>
+
+          <a href="#pricing" class="btn-pop-dark w-full py-2.5 rounded-xl text-xs font-bold uppercase">
+            Pesan Sekarang
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       CATALOG SECTION (Filter Tabs, Live Search, Sort & Interactive Cards)
+       ========================================================================== -->
+  <section id="catalog" class="py-20 bg-[#161d52] border-b-2 border-white/10 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="inline-block px-3 py-1 bg-white text-[#2f3b90] font-display text-xs uppercase rounded-md font-bold mb-2 shadow">
+          ✦ KOLEKSI TEMA LENGKAP
+        </span>
+        <h2 class="font-serifLuxury text-4xl sm:text-5xl md:text-6xl text-white uppercase tracking-tight font-bold">
+          PILIH TEMA UNDANGAN FAVORIT ANDA
+        </h2>
+        <p class="text-sm text-blue-200 mt-2 font-sans">
+          Seluruh tema dapat disesuaikan foto prewedding, font, susunan acara, dan backsound lagu pilihan Anda.
+        </p>
+      </div>
+
+      <!-- Filter Controls Bar -->
+      <div class="bg-black/30 backdrop-blur-md p-4 rounded-2xl border-2 border-white/20 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
+        
+        <!-- Category Filter Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+          <button data-category="all" class="catalog-tab-btn px-4 py-2 rounded-xl text-xs font-bold font-mono bg-white text-[#2f3b90] border-2 border-white shadow shrink-0">
+            Semua Tema
+          </button>
+          <button data-category="wedding-syari" class="catalog-tab-btn px-4 py-2 rounded-xl text-xs font-bold font-mono bg-white/10 text-white hover:bg-white/20 shrink-0">
+            Wedding Syar'i
+          </button>
+          <button data-category="wedding-modern" class="catalog-tab-btn px-4 py-2 rounded-xl text-xs font-bold font-mono bg-white/10 text-white hover:bg-white/20 shrink-0">
+            Wedding Modern
+          </button>
+          <button data-category="wedding-rustic" class="catalog-tab-btn px-4 py-2 rounded-xl text-xs font-bold font-mono bg-white/10 text-white hover:bg-white/20 shrink-0">
+            Rustic &amp; Floral
+          </button>
+          <button data-category="birthday" class="catalog-tab-btn px-4 py-2 rounded-xl text-xs font-bold font-mono bg-white/10 text-white hover:bg-white/20 shrink-0">
+            Sweet 17 / Birthday
+          </button>
+        </div>
+
+        <!-- Search & Sort Controls -->
+        <div class="flex items-center gap-3 w-full md:w-auto shrink-0">
+          <div class="relative w-full md:w-56">
+            <input type="text" id="catalog-search-input" placeholder="Cari nama tema..." class="w-full bg-white text-slate-900 pl-9 pr-3 py-2 rounded-xl text-xs font-medium border-2 border-white focus:outline-none">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+          </div>
+          <select id="catalog-sort-select" class="bg-white text-slate-900 px-3 py-2 rounded-xl text-xs font-bold border-2 border-white focus:outline-none shrink-0">
+            <option value="popular">Terpopuler</option>
+            <option value="price-low">Harga Terendah</option>
+            <option value="price-high">Harga Tertinggi</option>
+            <option value="rating">Rating Tertinggi</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Catalog Grid (Populated by app.js) -->
+      <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered by JS -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       FEATURE DEEP-DIVE GRID
+       ========================================================================== -->
+  <section id="features" class="py-20 bg-[#2f3b90] border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block px-3 py-1 bg-white text-[#2f3b90] font-display text-xs uppercase rounded-md font-bold mb-2 shadow">
+          ✦ FITUR LENGKAP &amp; TERBAIK
+        </span>
+        <h2 class="font-serifLuxury text-4xl sm:text-5xl md:text-6xl text-white uppercase tracking-tight font-bold">
+          SEMUA YANG ANDA BUTUHKAN DALAM 1 UNDANGAN
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <div class="pop-card bg-white p-6 rounded-2xl text-left">
+          <div class="w-12 h-12 rounded-xl bg-[#2f3b90] text-white flex items-center justify-center mb-4 shadow">
+            <i data-lucide="music" class="w-6 h-6 text-amber-300"></i>
+          </div>
+          <h3 class="font-serifLuxury text-2xl text-slate-900 font-bold mb-1">Custom Backsound Musik</h3>
+          <p class="text-xs text-slate-600 leading-relaxed font-sans">Bebas pilih lagu romantis atau nasyid pilihan, lengkap dengan tombol kontrol putar &amp; jeda yang elegan.</p>
+        </div>
+
+        <div class="pop-card bg-white p-6 rounded-2xl text-left">
+          <div class="w-12 h-12 rounded-xl bg-[#161d52] text-white flex items-center justify-center mb-4 shadow">
+            <i data-lucide="message-square" class="w-6 h-6 text-white"></i>
+          </div>
+          <h3 class="font-serifLuxury text-2xl text-slate-900 font-bold mb-1">Live RSVP &amp; Kolom Ucapan</h3>
+          <p class="text-xs text-slate-600 leading-relaxed font-sans">Tamu dapat memberikan ucapan doa restu dan konfirmasi kehadiran secara real-time langsung di undangan.</p>
+        </div>
+
+        <div class="pop-card bg-white p-6 rounded-2xl text-left">
+          <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center mb-4 shadow">
+            <i data-lucide="clock" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serifLuxury text-2xl text-slate-900 font-bold mb-1">Countdown Timer Acara</h3>
+          <p class="text-xs text-slate-600 leading-relaxed font-sans">Hitung mundur otomatis menuju waktu akad dan resepsi agar para tamu tidak melewatkan momen penting.</p>
+        </div>
+
+        <div class="pop-card bg-white p-6 rounded-2xl text-left">
+          <div class="w-12 h-12 rounded-xl bg-[#2f3b90] text-white flex items-center justify-center mb-4 shadow">
+            <i data-lucide="gift" class="w-6 h-6 text-amber-300"></i>
+          </div>
+          <h3 class="font-serifLuxury text-2xl text-slate-900 font-bold mb-1">Amplop Digital &amp; Hadiah</h3>
+          <p class="text-xs text-slate-600 leading-relaxed font-sans">Memudahkan tamu mengirimkan tanda kasih melalui transfer rekening bank atau QRIS dengan fitur 1-klik salin.</p>
+        </div>
+
+        <div class="pop-card bg-white p-6 rounded-2xl text-left">
+          <div class="w-12 h-12 rounded-xl bg-[#161d52] text-white flex items-center justify-center mb-4 shadow">
+            <i data-lucide="map-pin" class="w-6 h-6 text-amber-300"></i>
+          </div>
+          <h3 class="font-serifLuxury text-2xl text-slate-900 font-bold mb-1">Integrasi Google Maps</h3>
+          <p class="text-xs text-slate-600 leading-relaxed font-sans">Petunjuk arah navigasi akurat ke venue acara dengan tombol rute langsung yang terhubung ke Google Maps.</p>
+        </div>
+
+        <div class="pop-card bg-white p-6 rounded-2xl text-left">
+          <div class="w-12 h-12 rounded-xl bg-[#2f3b90] text-white flex items-center justify-center mb-4 shadow">
+            <i data-lucide="globe" class="w-6 h-6 text-amber-300"></i>
+          </div>
+          <h3 class="font-serifLuxury text-2xl text-slate-900 font-bold mb-1">Custom Domain Pribadi</h3>
+          <p class="text-xs text-slate-600 leading-relaxed font-sans">Tampilkan link undangan eksklusif dengan nama kedua mempelai (contoh: <code>www.rayhan-aisyah.com</code>).</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       PRICING PACKAGES & INTERACTIVE ORDER CALCULATOR
+       ========================================================================== -->
+  <section id="pricing" class="py-20 bg-[#161d52] border-b-2 border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block px-3 py-1 bg-white text-[#2f3b90] font-display text-xs uppercase rounded-md font-bold mb-2 shadow">
+          ✦ TRANSPARAN TANPA BIAYA TERSEMBUNYI
+        </span>
+        <h2 class="font-serifLuxury text-4xl sm:text-5xl md:text-6xl text-white uppercase tracking-tight font-bold">
+          PILIHAN PAKET &amp; KALKULATOR HARGA
+        </h2>
+        <p class="text-sm text-blue-100 mt-2 font-sans">
+          Pilih paket dasar, centang fitur tambahan sesuai kebutuhan Anda, dan lakukan pemesanan instan via WhatsApp.
+        </p>
+      </div>
+
+      <!-- Packages 3-Col Grid -->
+      <div id="packages-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- Interactive Addons & Live Order Calculator Card -->
+      <div class="pop-card bg-white text-slate-900 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto shadow-2xl">
+        <div class="border-b border-slate-200 pb-4 mb-6 text-left">
+          <span class="inline-block px-2.5 py-0.5 bg-blue-100 text-[#2f3b90] text-[10px] font-mono font-bold uppercase rounded mb-1">
+            KUSTOMISASI TAMBAHAN
+          </span>
+          <h3 class="font-serifLuxury text-3xl text-[#161d52] font-bold">Add-ons &amp; Kalkulator Harga Live</h3>
+          <p class="text-xs text-slate-600 font-sans">Centang fitur tambahan di bawah untuk menghitung total biaya secara otomatis:</p>
+        </div>
+
+        <!-- Addons Checkboxes List -->
+        <div id="addons-list" class="space-y-3 mb-8">
+          <!-- Rendered by app.js -->
+        </div>
+
+        <!-- Total Calculation & WhatsApp Checkout Button -->
+        <div class="bg-slate-50 border-2 border-[#161d52] p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="text-left">
+            <span class="text-xs font-mono text-slate-500 uppercase block font-bold">Rincian Terpilih:</span>
+            <div class="font-bold text-sm text-slate-900 font-sans">
+              <span id="calc-selected-pkg-name">Paket Premium Royal Suite</span> • <span id="calc-addons-count" class="text-[#2f3b90]">1 Fitur Tambahan</span>
+            </div>
+            <div class="font-display text-4xl text-[#2f3b90] font-bold mt-1" id="calc-total-price">
+              Rp 174.000
+            </div>
+          </div>
+
+          <button id="btn-calc-checkout-wa" class="btn-pop-white py-4 px-8 rounded-2xl text-sm font-display uppercase tracking-wider shadow-[5px_5px_0px_#161d52] w-full sm:w-auto shrink-0">
+            <i data-lucide="message-circle" class="w-5 h-5 text-[#2f3b90]"></i>
+            <span>Pesan Sekarang via WhatsApp</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       FAQ SECTION (Accordion)
+       ========================================================================== -->
+  <section id="faq" class="py-20 bg-[#2f3b90] border-b-2 border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="inline-block px-3 py-1 bg-white text-[#2f3b90] font-display text-xs uppercase rounded-md font-bold mb-2 shadow">
+          ✦ PANDUAN &amp; BANTUAN
+        </span>
+        <h2 class="font-serifLuxury text-4xl sm:text-5xl text-white uppercase tracking-tight font-bold">
+          PERTANYAAN YANG SERING DIAJUKAN (FAQ)
+        </h2>
+      </div>
+
+      <div class="space-y-4 text-left">
+        
+        <div class="pop-card bg-white rounded-2xl overflow-hidden">
+          <button class="faq-accordion-btn w-full p-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4">
+            <span class="text-sm font-serifLuxury text-lg font-bold">Berapa lama proses pembuatan undangan digital?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#2f3b90] transition-transform duration-300 shrink-0"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-xs text-slate-600 border-t border-slate-100 pt-3 leading-relaxed font-sans">
+            Proses pengerjaan normal rata-rata <b>1 x 24 jam</b> setelah foto dan informasi acara kami terima lengkap. Kami juga menyediakan opsi ekspres 6 jam jika Anda membutuhkan undangan dalam waktu cepat.
+          </div>
+        </div>
+
+        <div class="pop-card bg-white rounded-2xl overflow-hidden">
+          <button class="faq-accordion-btn w-full p-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4">
+            <span class="text-sm font-serifLuxury text-lg font-bold">Apakah ada batasan jumlah pengiriman link undangan?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#2f3b90] transition-transform duration-300 shrink-0"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-xs text-slate-600 border-t border-slate-100 pt-3 leading-relaxed font-sans">
+            <b>TIDAK ADA BATASAN!</b> Anda bebas menyebarkan link undangan ke ribuan tamu keluarga, sahabat, maupun kolega kerja tanpa biaya tambahan.
+          </div>
+        </div>
+
+        <div class="pop-card bg-white rounded-2xl overflow-hidden">
+          <button class="faq-accordion-btn w-full p-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4">
+            <span class="text-sm font-serifLuxury text-lg font-bold">Bagaimana jika ada perubahan susunan acara atau foto prewedding?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#2f3b90] transition-transform duration-300 shrink-0"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-xs text-slate-600 border-t border-slate-100 pt-3 leading-relaxed font-sans">
+            Kami memberikan garansi <b>Bebas Revisi Sepuasnya</b>. Tim desainer kami siap memperbarui teks, rundown, ataupun foto kapan pun Anda butuhkan sebelum hari H.
+          </div>
+        </div>
+
+        <div class="pop-card bg-white rounded-2xl overflow-hidden">
+          <button class="faq-accordion-btn w-full p-5 text-left font-bold text-slate-900 flex items-center justify-between gap-4">
+            <span class="text-sm font-serifLuxury text-lg font-bold">Berapa lama masa aktif website undangan digital?</span>
+            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-[#2f3b90] transition-transform duration-300 shrink-0"></i>
+          </button>
+          <div class="faq-content hidden px-5 pb-5 text-xs text-slate-600 border-t border-slate-100 pt-3 leading-relaxed font-sans">
+            Masa aktif undangan berlaku hingga <b>1 tahun penuh</b> setelah tanggal pernikahan, sehingga buku ucapan dan galeri kenangan Anda tetap dapat dibuka kapan saja.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================================================
+       FOOTER (PUBLIC ONLY)
+       ========================================================================== -->
+  <footer class="bg-[#161d52] text-white pt-12 pb-8 border-t-4 border-white/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12 text-left">
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-white text-[#2f3b90] font-bold flex items-center justify-center rounded-lg font-serifLuxury">
+              ✦
+            </div>
+            <span class="font-display text-2xl tracking-wider text-white font-bold">
+              BLUEVITE<span class="text-amber-300">.ID</span>
+            </span>
+          </div>
+          <p class="text-xs text-slate-300 max-w-sm leading-relaxed font-sans">
+            Platform pembuatan undangan digital website premium #1 di Indonesia dengan tema Ultramarine Blue `#2F3B90` &amp; Pure White yang anggun dan berkelas.
+          </p>
+          <div class="flex items-center gap-3 text-amber-300">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+            <i data-lucide="facebook" class="w-5 h-5"></i>
+            <i data-lucide="youtube" class="w-5 h-5"></i>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-serifLuxury text-lg text-amber-300 font-bold mb-3">KATEGORI TEMA</h4>
+          <ul class="space-y-2 text-xs text-slate-300 font-mono">
+            <li><a href="#catalog" class="hover:text-white">Royal Modern Wedding</a></li>
+            <li><a href="#catalog" class="hover:text-white">Wedding Syar'i (Islami)</a></li>
+            <li><a href="#catalog" class="hover:text-white">Emerald Botanical Glasshouse</a></li>
+            <li><a href="#catalog" class="hover:text-white">Sweet 17 / Birthday Party</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-serifLuxury text-lg text-amber-300 font-bold mb-3">HUBUNGI KAMI</h4>
+          <ul class="space-y-2 text-xs text-slate-300 font-mono">
+            <li>WhatsApp: +62 822-2355-1205</li>
+            <li>Jam Layanan: 08:00 - 22:00 WIB</li>
+            <li>Email: hello@bluevite.id</li>
+            <li>Jakarta &amp; Surabaya, Indonesia</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 font-mono gap-4 pt-6 border-t border-white/10">
+        <span>© 2026 BLUEVITE.ID - All Rights Reserved.</span>
+        <span>Crafted in Ultramarine Blue `#2F3B90` &amp; Pure White.</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==========================================================================
+       MODAL: LIVE SMARTPHONE INVITATION SIMULATOR
+       ========================================================================== -->
+  <div id="simulator-modal" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    
+    <div class="relative w-full max-w-4xl bg-[#161d52] border-4 border-white/20 rounded-3xl shadow-[10px_10px_0px_#0f1438] p-6 text-white my-auto flex flex-col lg:flex-row gap-8 items-center">
+      
+      <button id="close-simulator-btn" class="absolute top-4 right-4 z-50 w-10 h-10 bg-rose-600 hover:bg-rose-500 text-white font-bold rounded-full border-2 border-white flex items-center justify-center shadow">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <!-- Left Column: Smartphone Simulator Mockup -->
+      <div class="w-full lg:w-1/2 flex justify-center">
+        <div class="phone-mockup">
+          <div class="phone-notch">
+            <div class="phone-speaker"></div>
+            <div class="phone-camera"></div>
+          </div>
+          <div id="simulator-screen" class="phone-screen">
+            <!-- Rendered by simulator.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Controls -->
+      <div class="w-full lg:w-1/2 text-left space-y-5">
+        
+        <div>
+          <span class="inline-block px-3 py-0.5 bg-white text-[#2f3b90] font-display text-xs uppercase rounded-md font-bold mb-2 shadow">
+            ✦ LIVE INTERACTIVE TESTER
+          </span>
+          <h3 class="font-serifLuxury text-3xl sm:text-4xl text-white font-bold">
+            SIMULATOR UNDANGAN DIGITAL
+          </h3>
+          <p class="text-xs text-slate-300 leading-relaxed mt-1 font-sans">
+            Uji coba langsung pengalaman tamu saat membuka undangan pernikahan Anda. Masukkan nama tamu di bawah untuk melihat personalisasi sampul secara instan.
+          </p>
+        </div>
+
+        <!-- Custom Guest Name Input -->
+        <div class="bg-[#1e2666] p-4 rounded-2xl border border-white/20 space-y-2">
+          <label class="block text-xs font-mono font-bold text-amber-300 uppercase">
+            Ubah Nama Tamu di Cover:
+          </label>
+          <div class="flex gap-2">
+            <input type="text" id="simulator-guest-input" placeholder="Ketik nama tamu (cth: dr. Tirta &amp; Istri)" class="w-full bg-[#161d52] text-white px-3 py-2 rounded-xl text-xs border border-white/30 focus:outline-none focus:border-white font-medium">
+          </div>
+          <span class="text-[10px] text-slate-400 block font-mono">
+            💡 Teks nama di sampul undangan sebelah kiri akan berganti secara otomatis.
+          </span>
+        </div>
+
+        <!-- Instructions -->
+        <div class="space-y-2.5 text-xs font-mono text-slate-300">
+          <div class="flex items-center gap-2">
+            <span class="text-amber-300">✦</span>
+            <span>Tekan tombol <b>"Buka Undangan"</b> untuk memulai musik</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-amber-300">✦</span>
+            <span>Uji coba isi <b>Formulir RSVP</b> &amp; kirim ucapan doa</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-amber-300">✦</span>
+            <span>Coba klik tombol <b>"Salin"</b> pada nomor rekening tanda kasih</span>
+          </div>
+        </div>
+
+        <!-- CTA inside simulator -->
+        <div class="pt-4 border-t border-white/10 flex items-center justify-between gap-4">
+          <div>
+            <span class="text-[10px] text-slate-400 font-mono block">Tertarik dengan tema ini?</span>
+            <span class="font-display text-2xl text-white font-bold">Mulai dari Rp 99.000</span>
+          </div>
+          <button onclick="orderSingleTemplate(window.simulator.currentTemplate?.id)" class="btn-pop-white py-2.5 px-5 rounded-xl text-xs font-bold uppercase">
+            Pesan Tema Ini
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FLOATING QUICK WHATSAPP CHAT BUTTON -->
+  <a href="https://wa.me/6282223551205?text=Halo%20Admin%20Bluevite,%20saya%20tertarik%20dengan%20undangan%20digital" target="_blank" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-400 text-white p-3.5 rounded-full border-2 border-white shadow-[4px_4px_0px_#161d52] flex items-center gap-2 transition hover:scale-105 active:scale-95 group">
+    <i data-lucide="message-circle" class="w-6 h-6 fill-white"></i>
+    <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 font-bold text-xs font-mono">
+      Chat Admin WA
+    </span>
+  </a>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/security.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/simulator.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

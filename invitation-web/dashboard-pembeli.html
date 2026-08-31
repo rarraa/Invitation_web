@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Dashboard Pengantin - Bluevite.id</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navyMidnight: '#0a192f',
+              navyDeep: '#0f2042',
+              navy: '#162a56',
+              navyLight: '#1e3a8a',
+              yellow: '#facc15',
+              yellowHover: '#eab308'
+            }
+          },
+          fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
+            impact: ['Anton', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Theme Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#0a192f] text-white selection:bg-yellow-400 selection:text-black">
+
+  <!-- TOP HEADER / BRAND BAR -->
+  <header class="bg-[#0f2042] border-b-2 border-black sticky top-0 z-40 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand & Client Indicator -->
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-2.5 group">
+          <div class="w-10 h-10 bg-yellow-400 text-black font-bold flex items-center justify-center rounded-xl border-2 border-black shadow-[2px_2px_0px_#000000]">
+            <i data-lucide="sparkles" class="w-5 h-5 fill-black"></i>
+          </div>
+          <div>
+            <span class="font-impact text-xl tracking-wider text-white">
+              BLUEVITE<span class="text-yellow-400">.ID</span>
+            </span>
+            <span class="text-[9px] font-mono tracking-widest text-blue-300 block -mt-1 uppercase font-bold">
+              Smart Guest Portal
+            </span>
+          </div>
+        </a>
+
+        <div class="hidden md:block h-6 w-px bg-white/20"></div>
+
+        <div class="hidden md:flex items-center gap-2 bg-black/40 border border-white/20 px-3 py-1.5 rounded-full text-xs font-mono">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>dr. Aisyah Humaira &amp; Muhammad Rayhan, S.T</span>
+        </div>
+      </div>
+
+      <!-- Action Navigation Links -->
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="btn-pop-dark py-2 px-3 rounded-xl text-xs font-bold font-mono">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">Web Penjualan</span>
+        </a>
+        <a href="dashboard-admin.html" class="btn-pop-dark py-2 px-3 rounded-xl text-xs font-bold font-mono text-yellow-300">
+          <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+          <span>Dashboard Admin</span>
+        </a>
+        <button onclick="window.simulator ? window.simulator.open('royal-syari-01') : window.location.href='index.html'" class="btn-pop-yellow py-2 px-4 rounded-xl text-xs font-bold uppercase font-impact tracking-wider">
+          <i data-lucide="smartphone" class="w-4 h-4"></i>
+          <span>Live Preview</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Sub Navigation Tabs Bar -->
+    <div class="bg-[#162a56] border-t border-white/10 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto flex items-center gap-2 overflow-x-auto py-2.5 scrollbar-none font-mono text-xs">
+        <button data-tab="overview" class="dash-nav-tab px-4 py-1.5 rounded-xl font-bold bg-yellow-400 text-black border-2 border-black shadow flex items-center gap-1.5 shrink-0">
+          <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i>
+          <span>Overview</span>
+        </button>
+        <button data-tab="guests" class="dash-nav-tab px-4 py-1.5 rounded-xl font-bold text-slate-300 hover:bg-white/10 flex items-center gap-1.5 shrink-0">
+          <i data-lucide="users" class="w-3.5 h-3.5"></i>
+          <span>Kelola Daftar Tamu</span>
+        </button>
+        <button data-tab="broadcast" class="dash-nav-tab px-4 py-1.5 rounded-xl font-bold text-slate-300 hover:bg-white/10 flex items-center gap-1.5 shrink-0">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span>Generator Sebar WA</span>
+        </button>
+        <button data-tab="qrscanner" class="dash-nav-tab px-4 py-1.5 rounded-xl font-bold text-slate-300 hover:bg-white/10 flex items-center gap-1.5 shrink-0">
+          <i data-lucide="qr-code" class="w-3.5 h-3.5"></i>
+          <span>Buku Tamu QR Scanner</span>
+        </button>
+        <button data-tab="wishes" class="dash-nav-tab px-4 py-1.5 rounded-xl font-bold text-slate-300 hover:bg-white/10 flex items-center gap-1.5 shrink-0">
+          <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+          <span>Moderasi Ucapan</span>
+        </button>
+        <button data-tab="settings" class="dash-nav-tab px-4 py-1.5 rounded-xl font-bold text-slate-300 hover:bg-white/10 flex items-center gap-1.5 shrink-0">
+          <i data-lucide="settings" class="w-3.5 h-3.5"></i>
+          <span>Edit Konten Undangan</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- ==========================================================================
+         TAB 1: OVERVIEW PANE
+         ========================================================================== -->
+    <div id="pane-overview" class="dash-section-pane space-y-6">
+      
+      <!-- Top Status Banner Card -->
+      <div class="pop-card-navy rounded-3xl p-6 sm:p-8 relative overflow-hidden bg-gradient-to-r from-[#0f2042] via-[#162a56] to-[#1e3a8a]">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10 text-left">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-3 py-1 bg-emerald-500 text-black text-[10px] font-impact font-bold uppercase rounded-full border border-black shadow">
+                🟢 STATUS: LIVE ONLINE
+              </span>
+              <span class="text-xs font-mono text-yellow-300">Paket Premium (Masa Aktif s/d 20 Nov 2027)</span>
+            </div>
+            <h1 class="font-display text-4xl sm:text-5xl text-white">
+              dr. Aisyah Humaira &amp; Muhammad Rayhan
+            </h1>
+            <p class="text-xs text-blue-200 font-mono mt-1" id="client-cd-days">
+              H-83 Hari Menuju Hari H • Minggu, 20 November 2026
+            </p>
+          </div>
+
+          <!-- Quick Link Box -->
+          <div class="bg-black/50 border-2 border-white/20 p-4 rounded-2xl w-full md:w-auto text-left shadow-xl shrink-0">
+            <span class="text-[10px] font-mono text-slate-400 uppercase block font-bold mb-1">Tautan Undangan Website:</span>
+            <div class="flex items-center gap-2">
+              <input type="text" readonly value="https://bluevite.id/v/rayhan-aisyah" class="bg-slate-900 text-yellow-300 font-mono text-xs px-3 py-2 rounded-lg border border-slate-700 w-full sm:w-64 focus:outline-none">
+              <button onclick="window.clientDash.copyPersonalLink('https://bluevite.id/v/rayhan-aisyah', 'Semua')" class="btn-pop-yellow py-2 px-3 rounded-lg text-xs font-bold shrink-0">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KPI Metrics Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-left">
+        
+        <div class="pop-card bg-white p-4 rounded-2xl">
+          <div class="flex items-center justify-between text-slate-400 text-[10px] font-mono font-bold mb-1">
+            <span>TOTAL TAMU</span>
+            <i data-lucide="users" class="w-4 h-4 text-blue-600"></i>
+          </div>
+          <div class="font-impact text-3xl text-slate-950" id="stat-total-guests">6</div>
+          <span class="text-[10px] text-slate-500 font-mono">Daftar Terdaftar</span>
+        </div>
+
+        <div class="pop-card bg-white p-4 rounded-2xl">
+          <div class="flex items-center justify-between text-slate-400 text-[10px] font-mono font-bold mb-1">
+            <span>TERKIRIM</span>
+            <i data-lucide="send" class="w-4 h-4 text-emerald-600"></i>
+          </div>
+          <div class="font-impact text-3xl text-emerald-600" id="stat-sent-guests">4</div>
+          <span class="text-[10px] text-slate-500 font-mono">Via WhatsApp</span>
+        </div>
+
+        <div class="pop-card bg-white p-4 rounded-2xl">
+          <div class="flex items-center justify-between text-slate-400 text-[10px] font-mono font-bold mb-1">
+            <span>DIBUKA</span>
+            <i data-lucide="eye" class="w-4 h-4 text-purple-600"></i>
+          </div>
+          <div class="font-impact text-3xl text-purple-600" id="stat-opened-guests">3</div>
+          <span class="text-[10px] text-slate-500 font-mono">Oleh Tamu</span>
+        </div>
+
+        <div class="pop-card bg-white p-4 rounded-2xl">
+          <div class="flex items-center justify-between text-slate-400 text-[10px] font-mono font-bold mb-1">
+            <span>KONFIRMASI HADIR</span>
+            <i data-lucide="check-circle" class="w-4 h-4 text-blue-600"></i>
+          </div>
+          <div class="font-impact text-3xl text-blue-700" id="stat-hadir-count">3</div>
+          <span class="text-[10px] text-slate-500 font-mono">Status RSVP</span>
+        </div>
+
+        <div class="pop-card bg-white p-4 rounded-2xl">
+          <div class="flex items-center justify-between text-slate-400 text-[10px] font-mono font-bold mb-1">
+            <span>ESTIMASI PORSI</span>
+            <i data-lucide="utensils" class="w-4 h-4 text-amber-500"></i>
+          </div>
+          <div class="font-impact text-2xl text-amber-600" id="stat-total-porsi">6 Orang</div>
+          <span class="text-[10px] text-slate-500 font-mono">Headcount Katering</span>
+        </div>
+
+        <div class="pop-card bg-white p-4 rounded-2xl">
+          <div class="flex items-center justify-between text-slate-400 text-[10px] font-mono font-bold mb-1">
+            <span>QR CHECK-IN</span>
+            <i data-lucide="qr-code" class="w-4 h-4 text-rose-600"></i>
+          </div>
+          <div class="font-impact text-3xl text-rose-600" id="stat-checkedin-count">1</div>
+          <span class="text-[10px] text-slate-500 font-mono">Tamu Hadir Venue</span>
+        </div>
+
+      </div>
+
+      <!-- Quick Action Shortcuts -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+        
+        <div class="pop-card bg-white p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold mb-3">
+              <i data-lucide="user-plus" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display text-2xl text-slate-900">Tambah Tamu Undangan</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mt-1">Masukkan nama teman, keluarga, atau relasi kantor untuk membuat cover personal otomatis.</p>
+          </div>
+          <button onclick="document.querySelector('[data-tab=guests]').click()" class="btn-pop-yellow w-full py-2.5 rounded-xl text-xs font-bold uppercase mt-4">
+            Buka Kelola Tamu
+          </button>
+        </div>
+
+        <div class="pop-card bg-white p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold mb-3">
+              <i data-lucide="message-square" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display text-2xl text-slate-900">Kirim WhatsApp Broadcast</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mt-1">Kustomisasi teks pengantar pesan sebar WhatsApp dan kirim langsung ke kontak tamu.</p>
+          </div>
+          <button onclick="document.querySelector('[data-tab=broadcast]').click()" class="btn-pop-dark w-full py-2.5 rounded-xl text-xs font-bold uppercase mt-4">
+            Atur Template Broadcast
+          </button>
+        </div>
+
+        <div class="pop-card bg-white p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold mb-3">
+              <i data-lucide="qr-code" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display text-2xl text-slate-900">Scanner Buku Tamu Digital</h3>
+            <p class="text-xs text-slate-600 leading-relaxed mt-1">Buka simulator scanner resepsionis untuk mencatat kehadiran tamu saat hari H acara.</p>
+          </div>
+          <button onclick="document.querySelector('[data-tab=qrscanner]').click()" class="btn-pop-yellow w-full py-2.5 rounded-xl text-xs font-bold uppercase mt-4">
+            Buka QR Scanner
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==========================================================================
+         TAB 2: GUEST LIST MANAGER PANE
+         ========================================================================== -->
+    <div id="pane-guests" class="dash-section-pane hidden space-y-6">
+      
+      <!-- Top Guest Controls & Form -->
+      <div class="pop-card bg-white text-slate-900 rounded-3xl p-6 shadow-xl text-left">
+        <h3 class="font-display text-3xl text-slate-950 mb-1">Manajemen Tamu Undangan</h3>
+        <p class="text-xs text-slate-600 mb-6">Tambah, cari, dan kelola penerima undangan digital pernikahan Anda.</p>
+
+        <!-- Form Tambah Tamu -->
+        <form id="client-add-guest-form" class="bg-blue-50 border-2 border-blue-200 p-4 rounded-2xl mb-6">
+          <span class="text-xs font-bold text-blue-900 block mb-3">➕ Tambah Tamu Baru:</span>
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+            <input type="text" name="guest_name" placeholder="Nama Lengkap &amp; Gelar Tamu" required class="bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none">
+            <select name="guest_group" class="bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none">
+              <option value="Keluarga">Keluarga Besar</option>
+              <option value="Sahabat Kuliah">Sahabat / Teman</option>
+              <option value="Kolega Kantor">Kolega Kantor</option>
+              <option value="VIP Guest">VIP Guest</option>
+            </select>
+            <input type="text" name="guest_phone" placeholder="Nomor WA (cth: 0812345678)" class="bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none">
+            <button type="submit" class="btn-pop-yellow py-2 px-4 rounded-xl text-xs font-bold">
+              Simpan ke Daftar
+            </button>
+          </div>
+        </form>
+
+        <!-- Filter & Search Bar -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4">
+          <div class="flex items-center gap-3 w-full sm:w-auto">
+            <select id="client-filter-group" class="bg-slate-100 border border-slate-300 text-slate-800 px-3 py-2 rounded-xl text-xs font-bold">
+              <option value="Semua">Semua Kategori Grup</option>
+              <option value="Keluarga">Keluarga Besar</option>
+              <option value="Sahabat Kuliah">Sahabat</option>
+              <option value="Kolega Kantor">Kolega Kantor</option>
+              <option value="VIP Guest">VIP Guest</option>
+            </select>
+          </div>
+
+          <div class="relative w-full sm:w-64">
+            <input type="text" id="client-search-guest" placeholder="Cari nama tamu..." class="w-full bg-slate-100 border border-slate-300 text-slate-800 pl-9 pr-3 py-2 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-blue-600">
+            <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
+          </div>
+        </div>
+
+        <!-- Table of Guests -->
+        <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+          <table class="w-full text-left border-collapse">
+            <thead class="bg-slate-100 border-b border-slate-200 text-[10px] font-mono text-slate-600 uppercase">
+              <tr>
+                <th class="p-3.5">#</th>
+                <th class="p-3.5">Nama Tamu</th>
+                <th class="p-3.5">Kategori Grup</th>
+                <th class="p-3.5">Status Sebar</th>
+                <th class="p-3.5">Konfirmasi RSVP</th>
+                <th class="p-3.5">Aksi Kirim</th>
+              </tr>
+            </thead>
+            <tbody id="client-guest-tbody" class="divide-y divide-slate-100">
+              <!-- Rendered by client-dashboard.js -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==========================================================================
+         TAB 3: WHATSAPP BROADCAST GENERATOR
+         ========================================================================== -->
+    <div id="pane-broadcast" class="dash-section-pane hidden space-y-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 text-left">
+        
+        <!-- Left: Template Editor (7 cols) -->
+        <div class="lg:col-span-7 pop-card bg-white text-slate-900 rounded-3xl p-6 sm:p-8">
+          <h3 class="font-display text-3xl text-slate-950 mb-1">Editor Template Pesan WhatsApp</h3>
+          <p class="text-xs text-slate-600 mb-4">Gunakan tag dinamis agar nama tamu dan link undangan otomatis disesuaikan.</p>
+
+          <!-- Tag Pills -->
+          <div class="flex flex-wrap gap-2 mb-4 font-mono text-[10px]">
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold">{nama_tamu}</span>
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold">{link_undangan}</span>
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold">{tanggal_acara}</span>
+            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded font-bold">{grup}</span>
+          </div>
+
+          <textarea id="wa-template-input" rows="9" class="w-full bg-slate-50 border-2 border-slate-300 rounded-2xl p-4 text-xs font-mono focus:ring-2 focus:ring-blue-600 focus:outline-none leading-relaxed text-slate-900 mb-4"></textarea>
+
+          <button onclick="showToast('💾 Template pesan sebar WhatsApp berhasil disimpan!')" class="btn-pop-yellow py-2.5 px-6 rounded-xl text-xs font-bold uppercase">
+            Simpan Template
+          </button>
+        </div>
+
+        <!-- Right: Live WhatsApp Bubble Preview (5 cols) -->
+        <div class="lg:col-span-5 pop-card-navy bg-[#09111e] rounded-3xl p-6 border-2 border-slate-700 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+              <div class="flex items-center gap-2 text-xs font-bold text-emerald-400">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Preview WhatsApp Bubble</span>
+              </div>
+              <span class="text-[10px] text-slate-400 font-mono">Tampilan di HP Tamu</span>
+            </div>
+
+            <!-- WhatsApp Simulated Bubble -->
+            <div class="bg-[#0b2016] border border-emerald-800/60 rounded-2xl p-4 text-xs text-white leading-relaxed font-sans shadow-lg relative">
+              <div class="text-[11px] text-emerald-300 font-bold mb-1">Official Invitation</div>
+              <div id="wa-preview-bubble" class="whitespace-pre-wrap font-mono text-[11px] text-slate-200">
+                <!-- Populated by JS -->
+              </div>
+              <div class="text-[9px] text-slate-400 text-right mt-2 font-mono">10:20 WIB • ✓✓</div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800">
+            <button onclick="window.clientDash.sendDirectWa(window.clientDash.guests[0]?.id)" class="btn-pop-yellow w-full py-3 rounded-xl text-xs font-bold uppercase">
+              📲 Test Kirim Contoh ke WhatsApp Saya
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==========================================================================
+         TAB 4: QR CODE CHECK-IN SCANNER (Digital Guestbook)
+         ========================================================================== -->
+    <div id="pane-qrscanner" class="dash-section-pane hidden space-y-6">
+      
+      <div class="max-w-3xl mx-auto pop-card bg-white text-slate-900 rounded-3xl p-6 sm:p-8 text-center shadow-xl">
+        <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-[10px] font-mono font-bold uppercase rounded-full mb-2">
+          MEJA RESEPSIONIS ACARA
+        </span>
+        <h3 class="font-display text-4xl text-slate-950">Scanner Buku Tamu Digital</h3>
+        <p class="text-xs text-slate-600 max-w-lg mx-auto mb-6">
+          Petugas resepsionis dapat menggunakan fitur ini untuk scan QR Code pada undangan tamu atau memasukkan ID/Nama tamu untuk menandai kehadiran.
+        </p>
+
+        <!-- Simulated Camera Viewfinder -->
+        <div class="w-full max-w-sm mx-auto h-64 bg-slate-950 rounded-2xl border-4 border-dashed border-purple-500 relative flex flex-col items-center justify-center p-6 text-white shadow-inner mb-6 overflow-hidden">
+          <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#a855f7_1px,transparent_1px)] [background-size:16px_16px]"></div>
+          
+          <i data-lucide="qr-code" class="w-16 h-16 text-purple-400 mb-2 animate-pulse"></i>
+          <span class="text-xs font-mono text-slate-300">Arahkan Kamera ke QR Code Tamu</span>
+          <span class="text-[10px] text-purple-300 font-mono mt-1">Status: Kamera Standby</span>
+
+          <!-- Animated Scanline -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-purple-400 shadow-[0_0_12px_#c084fc] animate-bounce"></div>
+        </div>
+
+        <!-- Manual Input / Fast Test Barcode Buttons -->
+        <div class="max-w-md mx-auto space-y-3">
+          <div class="flex gap-2">
+            <input type="text" id="manual-qr-input" placeholder="Masukkan ID / Nama Tamu..." class="w-full bg-slate-100 border border-slate-300 rounded-xl px-4 py-2 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-purple-600">
+            <button onclick="window.clientDash.simulateQrScan(document.getElementById('manual-qr-input').value)" class="btn-pop-dark py-2 px-5 rounded-xl text-xs font-bold shrink-0">
+              Scan / Check-in
+            </button>
+          </div>
+
+          <!-- Quick Test Guest Buttons -->
+          <div class="flex flex-wrap items-center justify-center gap-1.5 pt-2">
+            <span class="text-[10px] font-mono text-slate-400">Uji Cepat:</span>
+            <button onclick="window.clientDash.simulateQrScan('Sukirno')" class="text-[10px] bg-slate-100 hover:bg-purple-100 text-slate-700 px-2.5 py-1 rounded-lg border font-mono">
+              Bpk. H. Sukirno (Keluarga)
+            </button>
+            <button onclick="window.clientDash.simulateQrScan('Andika')" class="text-[10px] bg-slate-100 hover:bg-purple-100 text-slate-700 px-2.5 py-1 rounded-lg border font-mono">
+              dr. Andika Pratama (VIP)
+            </button>
+          </div>
+        </div>
+
+        <!-- Scan Result Container -->
+        <div id="qr-scan-result" class="max-w-md mx-auto mt-6">
+          <!-- Populated by JS -->
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ==========================================================================
+         TAB 5: WISHES MODERATION
+         ========================================================================== -->
+    <div id="pane-wishes" class="dash-section-pane hidden space-y-6">
+      
+      <div class="pop-card bg-white text-slate-900 rounded-3xl p-6 sm:p-8 text-left shadow-xl">
+        <div class="flex items-center justify-between border-b border-slate-200 pb-4 mb-6">
+          <div>
+            <h3 class="font-display text-3xl text-slate-950">Moderasi Doa &amp; Ucapan Tamu</h3>
+            <p class="text-xs text-slate-600">Kelola dan filter pesan doa restu yang tampil di feed website undangan Anda.</p>
+          </div>
+          <span class="text-xs font-mono font-bold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">
+            Feed Realtime
+          </span>
+        </div>
+
+        <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+          <table class="w-full text-left border-collapse">
+            <thead class="bg-slate-100 text-[10px] font-mono text-slate-600 uppercase border-b border-slate-200">
+              <tr>
+                <th class="p-3.5">Pengirim</th>
+                <th class="p-3.5">Pesan Ucapan</th>
+                <th class="p-3.5">Status Tampil</th>
+                <th class="p-3.5">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="client-wishes-tbody" class="divide-y divide-slate-100">
+              <!-- Rendered by client-dashboard.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- ==========================================================================
+         TAB 6: INVITATION CONTENT SETTINGS
+         ========================================================================== -->
+    <div id="pane-settings" class="dash-section-pane hidden space-y-6">
+      
+      <div class="max-w-4xl mx-auto pop-card bg-white text-slate-900 rounded-3xl p-6 sm:p-8 text-left shadow-xl">
+        <h3 class="font-display text-3xl text-slate-950 mb-1">Pengaturan Konten Undangan</h3>
+        <p class="text-xs text-slate-600 mb-6">Perbarui data mempelai, jadwal acara akad &amp; resepsi, dan informasi rekening hadiah.</p>
+
+        <form id="client-settings-form" class="space-y-6">
+          
+          <!-- Mempelai -->
+          <div class="border-b border-slate-200 pb-5">
+            <h4 class="font-bold text-sm text-blue-900 uppercase font-mono mb-3">1. Data Mempelai</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nama Mempelai Wanita &amp; Gelar</label>
+                <input type="text" name="bride_name" value="dr. Aisyah Humaira, Sp.A" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nama Mempelai Pria &amp; Gelar</label>
+                <input type="text" name="groom_name" value="Muhammad Rayhan, S.T" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none">
+              </div>
+            </div>
+          </div>
+
+          <!-- Acara -->
+          <div class="border-b border-slate-200 pb-5">
+            <h4 class="font-bold text-sm text-blue-900 uppercase font-mono mb-3">2. Waktu &amp; Lokasi Acara</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Tanggal Acara</label>
+                <input type="text" name="event_date" value="Minggu, 20 November 2026" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Waktu Akad</label>
+                <input type="text" value="08:00 - 10:00 WIB" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Waktu Resepsi</label>
+                <input type="text" value="11:00 - 14:00 WIB" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Nama Gedung &amp; Alamat Lengkap</label>
+              <input type="text" value="Grand Ballroom Hotel Mulia, Jl. Asia Afrika No. 6, Senayan, Jakarta Pusat" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none">
+            </div>
+          </div>
+
+          <!-- Amplop Digital -->
+          <div>
+            <h4 class="font-bold text-sm text-blue-900 uppercase font-mono mb-3">3. Rekening Hadiah / Amplop Digital</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nomor Rekening 1 (BCA)</label>
+                <input type="text" value="8830192841 - a.n Muhammad Rayhan" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nomor Rekening 2 (BSI)</label>
+                <input type="text" value="7192840192 - a.n Aisyah Humaira" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-3.5 py-2 text-xs font-medium focus:ring-2 focus:ring-blue-600 focus:outline-none">
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-pop-yellow py-3 px-8 rounded-xl text-xs font-bold uppercase tracking-wider">
+            Simpan Perubahan Undangan
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/client-dashboard.js"></script>
+</body>
+</html>
