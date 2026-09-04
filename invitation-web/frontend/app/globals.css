@@ -24,3 +24,50 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ==========================================================================
+   Tambahan CSS untuk halaman Home (landing page). Tempel di BAWAH semua
+   CSS yang sudah ada di globals.css (jangan taruh baris @import baru,
+   file ini tidak ada @import sama sekali).
+   ========================================================================== */
+
+/* Equalizer animasi (dulu di section "Interactive Audio & RSVP") */
+.equalizer-bar {
+  display: inline-block;
+  width: 4px;
+  height: 100%;
+  background-color: #fbbf24;
+  border-radius: 2px;
+  animation: equalize 0.9s ease-in-out infinite;
+}
+@keyframes equalize {
+  0%, 100% { height: 30%; }
+  50% { height: 100%; }
+}
+
+/* Kartu invoice bergaya tiket sobek (dulu "menu-card-clip") */
+.menu-card-clip {
+  clip-path: polygon(
+    0% 4%, 2% 0%, 4% 4%, 6% 0%, 8% 4%, 10% 0%, 12% 4%, 14% 0%, 16% 4%, 18% 0%,
+    20% 4%, 22% 0%, 24% 4%, 26% 0%, 28% 4%, 30% 0%, 32% 4%, 34% 0%, 36% 4%, 38% 0%,
+    40% 4%, 42% 0%, 44% 4%, 46% 0%, 48% 4%, 50% 0%, 52% 4%, 54% 0%, 56% 4%, 58% 0%,
+    60% 4%, 62% 0%, 64% 4%, 66% 0%, 68% 4%, 70% 0%, 72% 4%, 74% 0%, 76% 4%, 78% 0%,
+    80% 4%, 82% 0%, 84% 4%, 86% 0%, 88% 4%, 90% 0%, 92% 4%, 94% 0%, 96% 4%, 98% 0%,
+    100% 4%, 100% 100%, 0% 100%
+  );
+}
+
+/* Strip barcode dekoratif (dulu "barcode-strip") */
+.barcode-strip {
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  height: 28px;
+  padding: 4px 8px;
+  background: #fff;
+}
+.barcode-strip span {
+  display: inline-block;
+  background-color: #0f172a;
+  height: 100%;
+}
